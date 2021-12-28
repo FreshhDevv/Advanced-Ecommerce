@@ -19,14 +19,28 @@
                         <form novalidate="">
                             <div class="row">
                                 <div class="col-12">
-               
+
+                                <div class="row">
+                                    <   div class="col-md-6">
                                     <div class="form-group">
-                                        <h5>Email Field <span class="text-danger">*</span></h5>
+                                        <h5>Admin User Name <span class="text-danger">*</span></h5>
                                         <div class="controls">
-                                            <input type="email" name="email" class="form-control" required="" data-validation-required-message="This field is required">
-                                            <div class="help-block"></div>
+                                            <input type="text" name="name" class="form-control" required="">     
                                         </div>
                                     </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                    <div class="form-group">
+                                        <h5>Admin Email <span class="text-danger">*</span></h5>
+                                        <div class="controls">
+                                            <input type="email" name="email" class="form-control" required="">     
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+               
+                                    
                                     
                                     <div class="form-group">
                                         <h5>File Input Field <span class="text-danger">*</span></h5>
