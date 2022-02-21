@@ -40,7 +40,7 @@ Route::post('admin/profile/update', [AdminProfileController::class, 'AdminProfil
 
 Route::get('/admin/change/password', [AdminProfileController::class, 'AdminChangePassword'])->name('admin.change.password');
 
-Route::post('/admin/update/password', [AdminProfileController::class, 'AdminUpdatePassword'])->name('admin.update.password');
+Route::post('/admin/update/password', [AdminProfileController::class, 'AdminUpdatePassword'])->name('admin.password.update');
 
 
 
