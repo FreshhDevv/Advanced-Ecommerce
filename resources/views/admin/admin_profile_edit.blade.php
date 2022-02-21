@@ -17,7 +17,8 @@
     <div class="box-body">
         <div class="row">
             <div class="col">
-                <form novalidate="">
+                <form method="post" action="{{ route('admin.profile.update') }}" enctype="multipart/form-data">
+                    @csrf
                     <div class="row">
                         <div class="col-12">
 
@@ -56,15 +57,15 @@
 
                             <div class="col-md-6">
 
-                            <img id="showImage" src="{{ (!empty($adminData->profile_photo_path))?
-                         url('upload/admin_images/'.$adminData->profile_photo_path):url('upload/no_image.jpg') }}" style="width:100px; height:100px;">
+                            <img id="showImage" src="{{ (!empty($editData->profile_photo_path))?
+                            url('upload/admin_images/'.$editData->profile_photo_path):url('upload/no_image.jpg') }}" style="width:100px; height:100px;">
 
                             </div>
                             </div>
                             
                            
                     <div class="text-xs-right">
-                        <input type="submit" class="btn btn-rounded btn-primary mb-5" value="Update">
+                        <input type="submit" class="btn btn-rounded btn-primary  mt-5 mb-5" value="Update">
                     </div>
                 </form>
 
