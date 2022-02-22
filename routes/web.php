@@ -16,7 +16,7 @@ use App\Http\Controllers\Backend\AdminProfileController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.main_master');
 });
 
 Route::group(['prefix'=> 'admin', 'middleware'=>['admin:admin']], function(){
