@@ -16,7 +16,7 @@ use App\Http\Controllers\Backend\AdminProfileController;
 */
 
 Route::get('/', function () {
-    return view('frontend.main_master');
+    return view('welcome');
 });
 
 Route::group(['prefix'=> 'admin', 'middleware'=>['admin:admin']], function(){
@@ -51,3 +51,5 @@ Route::post('/admin/update/password', [AdminProfileController::class, 'AdminUpda
 Route::middleware(['auth:sanctum,web', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::get('/', [IndexController::class, 'index']);
