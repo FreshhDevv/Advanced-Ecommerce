@@ -5,12 +5,15 @@
     <div class="container">
         <div class="row">
             <div class="col-md-2"><br>
-                <img class="card-img-top  mt-5 mb-5" style="border-radius: 50%" src="{{ (!empty($editData->profile_photo_path))?
-                            url('upload/admin_images/'.$editData->profile_photo_path):url('upload/no_image.jpg') }}" height="100%" width="100%"><br><br>
+                <img class="card-img-top  mt-5 mb-5" style="border-radius: 50%" src="{{ (!empty($user->profile_photo_path))?
+                            url('upload/user_images/'.$user->profile_photo_path):url('upload/no_image.jpg') }}" height="100%" width="100%"><br><br>
                 <ul class="list-group list-group-flash">
-                    <a href="" class="btn btn-primary btn-sm btn-block">Home</a>
+                    <a href="{{ route('dashboard') }}" class="btn btn-primary btn-sm btn-block">Home</a>
+
                     <a href="{{ route('user.profile') }}" class="btn btn-primary btn-sm btn-block">Profile Update</a>
+
                     <a href="" class="btn btn-primary btn-sm btn-block">Change Password</a>
+
                     <a href="{{ route('user.logout') }}" class="btn btn-danger btn-sm btn-block">Logout</a>
                 </ul>
             </div> <!-- End col-md-2 -->
@@ -30,41 +33,25 @@
                             <div class="form-group">
                                 <label class="info-title" for="exampleInputEmail1">Name <span> </span></label>
                                 <input type="text" name="name" class="form-control" value="{{ $user->name }}">
-                                @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
+                                
                             </div>
 
                             <div class="form-group">
                                 <label class="info-title" for="exampleInputEmail1">Email Address <span></span></label>
-                                <input type="email" id="email" name="email" class="form-control" value="{{ $user->email}} ">
-                                @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
+                                <input type="email" name="email" class="form-control" value="{{ $user->email}}">
+                                
                             </div>
 
                             <div class="form-group">
                                 <label class="info-title" for="exampleInputEmail1">Phone<span></span></label>
-                                <input type="text" id="email" name="email" class="form-control" value="{{ $user->phone }} ">
-                                @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
+                                <input type="text" name="phone" class="form-control" value="{{ $user->phone }}">
+                                
                             </div>
 
                             <div class="form-group">
                                 <label class="info-title" for="exampleInputEmail1">User Image<span></span></label>
-                                <input type="file" id="email" name="profile_photo_path" class="form-control">
-                                @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
+                                <input type="file" name="profile_photo_path" class="form-control">
+                               
                             </div>
 
                             <div class="form-group">
