@@ -24,21 +24,12 @@
                     <h3 class="text-center"><span class="text-danger">Hi...</span><strong>{{ Auth::user()->name }}</strong> Update Your Profile</h3>
 
                     <div class="card-body">
-                        <form method="post" , action="">
+                        <form method="post" , action="{{ route('user.profile.store') }}" enctype="multipart/form-data">
                             @csrf
-                            <div class="form-group">
-                                <label class="info-title" for="exampleInputEmail1">Email Address <span>*</span></label>
-                                <input type="email" id="email" name="email" class="form-control unicase-form-control text-input">
-                                @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
 
                             <div class="form-group">
                                 <label class="info-title" for="exampleInputEmail1">Name <span> </span></label>
-                                <input type="email" name="email" class="form-control unicase-form-control text-input">
+                                <input type="text" name="name" class="form-control" value="{{ $user->name }}">
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -47,8 +38,8 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="info-title" for="exampleInputEmail1">Email Address <span>*</span></label>
-                                <input type="email" id="email" name="email" class="form-control unicase-form-control text-input">
+                                <label class="info-title" for="exampleInputEmail1">Email Address <span></span></label>
+                                <input type="email" id="email" name="email" class="form-control" value="{{ $user->email}} ">
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -57,13 +48,27 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="info-title" for="exampleInputEmail1">Email Address <span>*</span></label>
-                                <input type="email" id="email" name="email" class="form-control unicase-form-control text-input">
+                                <label class="info-title" for="exampleInputEmail1">Phone<span></span></label>
+                                <input type="text" id="email" name="email" class="form-control" value="{{ $user->phone }} ">
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                                 @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label class="info-title" for="exampleInputEmail1">User Image<span></span></label>
+                                <input type="file" id="email" name="profile_photo_path" class="form-control">
+                                @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Update</button>
                             </div>
 
                         </form>
