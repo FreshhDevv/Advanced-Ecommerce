@@ -1,5 +1,9 @@
 @extends('frontend.main_master')
 @section('content')
+// Query builder method
+<!-- @php
+    $user = DB::table('users')->where('id',Auth::user()->id->first());
+@endphp -->
 
 <div class="body-content">
     <div class="container">
@@ -12,7 +16,7 @@
 
                     <a href="{{ route('user.profile') }}" class="btn btn-primary btn-sm btn-block">Profile Update</a>
 
-                    <a href="{{ route('change.password') }}" class="btn btn-primary btn-sm btn-block">Change Password</a>
+                    <a href="" class="btn btn-primary btn-sm btn-block">Change Password</a>
 
                     <a href="{{ route('user.logout') }}" class="btn btn-danger btn-sm btn-block">Logout</a>
                 </ul>
@@ -24,34 +28,28 @@
 
             <div class="col-md-6">
                 <div class="card">
-                    <h3 class="text-center"><span class="text-danger">Hi...</span><strong>{{ Auth::user()->name }}</strong> Update Your Profile</h3>
+                    <h3 class="text-center"><span class="text-danger">Change Password</h3>
 
                     <div class="card-body">
-                        <form method="post" , action="{{ route('user.profile.store') }}" enctype="multipart/form-data">
+                        <form method="post" , action="{{ route('user.profile.store') }}">
                             @csrf
 
                             <div class="form-group">
-                                <label class="info-title" for="exampleInputEmail1">Name <span> </span></label>
-                                <input type="text" name="name" class="form-control" value="{{ $user->name }}">
-                                
+                                <label class="info-title" for="exampleInputEmail1">Current Password <span> </span></label>
+                                <input type="password" id="current_password" name="oldpassword" class="form-control">
+
                             </div>
 
                             <div class="form-group">
-                                <label class="info-title" for="exampleInputEmail1">Email Address <span></span></label>
-                                <input type="email" name="email" class="form-control" value="{{ $user->email}}">
-                                
+                                <label class="info-title" for="exampleInputEmail1">New Password <span></span></label>
+                                <input type="password" id="password" name="password" class="form-control">
+
                             </div>
 
                             <div class="form-group">
-                                <label class="info-title" for="exampleInputEmail1">Phone<span></span></label>
-                                <input type="text" name="phone" class="form-control" value="{{ $user->phone }}">
-                                
-                            </div>
+                                <label class="info-title" for="exampleInputEmail1">Confirm Password<span></span></label>
+                                <input type="password" id="password_confirmation" name="confirm_password" class="form-control">
 
-                            <div class="form-group">
-                                <label class="info-title" for="exampleInputEmail1">User Image<span></span></label>
-                                <input type="file" name="profile_photo_path" class="form-control">
-                               
                             </div>
 
                             <div class="form-group">
