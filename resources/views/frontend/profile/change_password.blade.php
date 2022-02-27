@@ -1,9 +1,6 @@
 @extends('frontend.main_master')
 @section('content')
-// Query builder method
-<!-- @php
-    $user = DB::table('users')->where('id',Auth::user()->id->first());
-@endphp -->
+
 
 <div class="body-content">
     <div class="container">
@@ -16,7 +13,7 @@
 
                     <a href="{{ route('user.profile') }}" class="btn btn-primary btn-sm btn-block">Profile Update</a>
 
-                    <a href="" class="btn btn-primary btn-sm btn-block">Change Password</a>
+                    <a href="{{ route('change.password') }}" class="btn btn-primary btn-sm btn-block">Change Password</a>
 
                     <a href="{{ route('user.logout') }}" class="btn btn-danger btn-sm btn-block">Logout</a>
                 </ul>
@@ -31,7 +28,7 @@
                     <h3 class="text-center"><span class="text-danger">Change Password</h3>
 
                     <div class="card-body">
-                        <form method="post" , action="{{ route('user.profile.store') }}">
+                        <form method="post" , action="{{ route('user.password.update') }}">
                             @csrf
 
                             <div class="form-group">
