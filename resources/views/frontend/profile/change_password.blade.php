@@ -2,6 +2,7 @@
 @section('content')
 
 
+
 <div class="body-content">
     <div class="container">
         <div class="row">
@@ -28,7 +29,7 @@
                     <h3 class="text-center"><span class="text-danger">Change Password</h3>
 
                     <div class="card-body">
-                        <form method="post" , action="{{ route('user.password.update') }}">
+                        <form method="post" action="{{ route('user.password.update') }}">
                             @csrf
 
                             <div class="form-group">
