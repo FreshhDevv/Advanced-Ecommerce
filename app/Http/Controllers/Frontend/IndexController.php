@@ -63,7 +63,7 @@ class IndexController extends Controller
 
 		$validateData = $request->validate([
 			'oldpassword' => 'required',
-			'password' => 'required|confirmed',
+			'password' => 'required|required',
 		]);
 
 		$hashedPassword = Auth::user()->password;
