@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\AdminProfileController;
+use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Frontend\IndexController;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
@@ -72,7 +73,7 @@ Route::post('/user/password/update', [IndexController::class, 'UserPasswordUpdat
 // All Admin Brand Routes
 
 Route::prefix('brand')->group(function() {
-    
+    Route::get('view', [BrandController::class, 'BrandView'])->name('all.brands');
 });
 
 
