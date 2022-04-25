@@ -30,14 +30,19 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach ($brands as $item)
                                         <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
+                                            <td>{{ $item->brand_name_en }}</td>
+                                            <td>{{ $item->brand_name_fre }}</td>
+                                            <td><img src="{{ asset($item->brand_image) }}" alt="" style="width: 70px; height: 40px;"></td>
+                                            <td>
+                                                <a href="http://" class="btn btn-info">Edit</a>
+                                                <a href="http://" class="btn btn-danger">Delete</a>
+                                            </td>
+                                            
                                         </tr>
-                                        
-                                    
+                                        @endforeach
+                                       
                                 </table>
                             </div>
                         </div>
