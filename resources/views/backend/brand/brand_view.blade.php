@@ -68,26 +68,24 @@
                             <form method="post" action="{{ route('admin.password.update') }}">
                                 @csrf
                                 
-
-
                                             <div class="form-group">
-                                                <h5>Current Password <span class="text-danger">*</span></h5>
+                                                <h5>Brand Name English</h5>
                                                 <div class="controls">
-                                                    <input type="password" id="current_password" name="oldpassword" class="form-control" required="">
+                                                    <input type="text" name="brand_name_en" class="form-control">
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
-                                                <h5>New Password <span class="text-danger">*</span></h5>
+                                                <h5>Brand Name French</h5>
                                                 <div class="controls">
-                                                    <input type="password" id="password" name="password" class="form-control" required="">
+                                                    <input type="text" name="brand_name_fre" class="form-control">
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
-                                                <h5>Confirm Password <span class="text-danger">*</span></h5>
+                                                <h5>Brand Image</h5>
                                                 <div class="controls">
-                                                    <input type="password" id="password_confirmation" name="password_confirmation" class="form-control" required="">
+                                                    <input type="file" name="brand_image" class="form-control">
                                                 </div>
                                             </div>
 
