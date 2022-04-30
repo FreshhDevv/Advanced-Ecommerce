@@ -65,7 +65,7 @@
                     <!-- /.box-header -->
                     <div class="box-body">
                         <div class="table-responsive">
-                            <form method="post" action="{{ route('admin.password.update') }}">
+                            <form method="post" action="{{ route('brand.store') }}" enctype="multipart/form-data">
                                 @csrf
                                 
                                             <div class="form-group">
