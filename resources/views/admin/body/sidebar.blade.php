@@ -30,7 +30,7 @@
           </a>
         </li>  
 		
-        <li class="treeview">
+        <li class="treeview {{ ($prefix == '/brand')? 'active':'' }}">
           <a href="#">
             <i data-feather="message-circle"></i>
             <span>Brands</span>
@@ -39,7 +39,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ route('all.brands') }}"><i class="ti-more"></i>All Brands</a></li>
+            <li class="{{ ($route == 'all.brand')? 'active':'' }}"><a href="{{ route('all.brands') }}"><i class="ti-more"></i>All Brands</a></li>
           </ul>
         </li> 
 		  
