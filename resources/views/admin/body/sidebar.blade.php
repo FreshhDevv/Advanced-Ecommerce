@@ -39,7 +39,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="{{ ($route == 'all.brand')? 'active':'' }}"><a href="{{ route('all.brands') }}"><i class="ti-more"></i>All Brands</a></li>
+            <li class="{{ ($route == 'all.brands')? 'active':'' }}"><a href="{{ route('all.brands') }}"><i class="ti-more"></i>All Brands</a></li>
           </ul>
         </li> 
 		  
