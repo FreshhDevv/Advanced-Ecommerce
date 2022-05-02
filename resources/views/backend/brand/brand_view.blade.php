@@ -104,7 +104,7 @@
 
 
                                         <div class="text-xs-right">
-                                            <input type="submit" class="btn btn-rounded btn-primary  mt-5 mb-5" value="Update">
+                                            <input type="submit" class="btn btn-rounded btn-primary  mt-5 mb-5" value="Add New">
                                         </div>
                             </form>
                         </div>

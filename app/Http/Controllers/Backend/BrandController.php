@@ -20,6 +20,10 @@ class BrandController extends Controller
             'brand_name_en' => 'required',
             'brand_name_fre' => 'required',
             'brand_image' => 'required',
+        ],
+        [
+            'brand_name_en.required' => 'The Brand Name English field is required',
+            'brand_name_fre.required' => 'The Brand Name French field is required',
         ]);
     }   //End Method
 }
