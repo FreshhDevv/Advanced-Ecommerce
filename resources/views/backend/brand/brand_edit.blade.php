@@ -24,13 +24,15 @@
                     <!-- /.box-header -->
                     <div class="box-body">
                         <div class="table-responsive">
-                            <form method="post" action="{{ route('brand.store') }}" enctype="multipart/form-data">
+                            <form method="post" action="{{ route('brand.update',$brand->id) }}" enctype="multipart/form-data">
                                 @csrf
+                                <input type="hidden" name="id" value="{{ $brand->id }}">
+                                <input type="hidden" name="old_image" value="{{ $brand->brand_image }}">
 
                                 <div class="form-group">
                                     <h5>Brand Name English <span class="text-danger">*</span></h5>
                                     <div class="controls">
-                                        <input type="text" name="brand_name_en" class="form-control">
+                                        <input type="text" name="brand_name_en" class="form-control" value="{{ $brand->brand_name_en }}">
                                         @error('brand_name_en')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -40,7 +42,7 @@
                                 <div class="form-group">
                                     <h5>Brand Name French <span class="text-danger">*</span></h5>
                                     <div class="controls">
-                                        <input type="text" name="brand_name_fre" class="form-control">
+                                        <input type="text" name="brand_name_fre" class="form-control" value="{{ $brand->brand_name_fre }}">
                                         @error('brand_name_fre')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -58,7 +60,7 @@
                                 </div>
 
                                 <div class="text-xs-right">
-                                    <input type="submit" class="btn btn-rounded btn-primary  mt-5 mb-5" value="Update Brand">
+                                    <input type="submit" class="btn btn-rounded btn-primary  mt-5 mb-5" value="Update">
                                 </div>
                             </form>
                         </div>
