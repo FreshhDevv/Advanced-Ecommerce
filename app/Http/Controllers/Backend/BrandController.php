@@ -65,7 +65,7 @@ class BrandController extends Controller
             Image::make($image)->resize(300, 300)->save('upload/brands/' . $name_gen);
             $save_url = 'upload/brands/' . $name_gen;
 
-            Brand::insert([
+            Brand::findOrFail($brand_id)->update([
                 'brand_name_en' => $request->brand_name_en,
                 'brand_name_fre' => $request->brand_name_fre,
                 'brand_slug_en' => strtolower(str_replace(' ', '-', $request->brand_name_en)),
@@ -73,10 +73,22 @@ class BrandController extends Controller
                 'brand_image' => $save_url,
             ]);
             $notification = array(
-                'message' => 'Brand Added Successfully',
-                'alert-type' => 'success'
+                'message' => 'Brand Updated Successfully',
+                'alert-type' => 'info'
             );
-            return redirect()->back()->with($notification);
+            return redirect()->route('all.brands')->with($notification);
+        } else {
+            Brand::findOrFail($brand_id)->update([
+                'brand_name_en' => $request->brand_name_en,
+                'brand_name_fre' => $request->brand_name_fre,
+                'brand_slug_en' => strtolower(str_replace(' ', '-', $request->brand_name_en)),
+                'brand_slug_fre' =>str_replace(' ', '-', $request->brand_name_fre),
+            ]);
+            $notification = array(
+                'message' => 'Brand Updated Successfully',
+                'alert-type' => 'info'
+            );
+            return redirect()->route('all.brands')->with($notification);
         }
     }   //End Method
 }
