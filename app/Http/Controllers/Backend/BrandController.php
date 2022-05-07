@@ -28,7 +28,6 @@ class BrandController extends Controller
                 'brand_name_fre.required' => 'The Brand Name French field is required',
             ]
         );
-
         $image = $request->file('brand_image');
         $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
         Image::make($image)->resize(300, 300)->save('upload/brands/' . $name_gen);
@@ -41,11 +40,16 @@ class BrandController extends Controller
             'brand_slug_fre' => str_replace(' ', '-', $request->brand_name_fre),
             'brand_image' => $save_url,
         ]);
-
         $notification = array(
             'message' => 'Brand Added Successfully',
             'alert-type' => 'success'
         );
         return redirect()->back()->with($notification);
     }   //End Method
+
+    public function BrandEdit($id)
+    {
+        $brand = Brand::findOrFail($id);
+        return view('backend.brand.brand_edit', compact('brand'));
+    }
 }
