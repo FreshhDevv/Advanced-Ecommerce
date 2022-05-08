@@ -58,6 +58,8 @@ class BrandController extends Controller
         $brand_id = $request->id;
         $old_img = $request->old_image;
 
+        // If the Image is updated too..do this below
+
         if ($request->file('brand_image')) {
             unlink($old_img);
             $image = $request->file('brand_image');
@@ -77,6 +79,9 @@ class BrandController extends Controller
                 'alert-type' => 'info'
             );
             return redirect()->route('all.brands')->with($notification);
+
+        // If the Image is not updated...do the following
+        
         } else {
             Brand::findOrFail($brand_id)->update([
                 'brand_name_en' => $request->brand_name_en,
