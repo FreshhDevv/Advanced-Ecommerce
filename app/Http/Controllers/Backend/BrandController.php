@@ -81,7 +81,8 @@ class BrandController extends Controller
             return redirect()->route('all.brands')->with($notification);
 
         // If the Image is not updated...do the following
-        
+        // Updating a specific id, we use the find or fail method
+
         } else {
             Brand::findOrFail($brand_id)->update([
                 'brand_name_en' => $request->brand_name_en,
