@@ -97,4 +97,9 @@ class BrandController extends Controller
             return redirect()->route('all.brands')->with($notification);
         }
     }   //End Method
+
+    public function BrandDelete($id) 
+    {
+
+    }
 }
