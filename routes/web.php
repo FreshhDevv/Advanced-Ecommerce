@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\AdminProfileController;
 use App\Http\Controllers\Backend\BrandController;
+use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Frontend\IndexController;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
@@ -82,6 +83,12 @@ Route::prefix('brand')->group(function() {
     Route::post('/update', [BrandController::class, 'BrandUpdate'])->name('brand.update');
 
     Route::get('/delete/{id}', [BrandController::class, 'BrandDelete'])->name('brand.delete');
+});
+
+// All Admin Category Routes
+
+Route::prefix('category')->group(function(){
+    Route::get('/view', [CategoryController::class, 'CategoryView'])->name('all.categories');
 });
 
 
