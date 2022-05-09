@@ -107,7 +107,7 @@ class BrandController extends Controller
         Brand::findOrFail($id)->delete(); 
         $notification = array(
             'message' => 'Brand Deleted Successfully',
-            'alert-type' => 'danger'
+            'alert-type' => 'info'
         );
         return redirect()->back()->with($notification);
     }   //end method
