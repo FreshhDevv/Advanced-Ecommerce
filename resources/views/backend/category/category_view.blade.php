@@ -64,7 +64,7 @@
                     <!-- /.box-header -->
                     <div class="box-body">
                         <div class="table-responsive">
-                            <form method="post" action="{{ route('brand.store') }}">
+                            <form method="post" action="{{ route('category.store') }}">
                                 @csrf
 
                                 <div class="form-group">

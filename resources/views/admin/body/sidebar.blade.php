@@ -51,7 +51,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ route('all.categories') }}"><i class="ti-more"></i>All Categories</a></li>
+            <li class="{{ ($route == 'all.categories')? 'active':'' }}"><a href="{{ route('all.categories') }}"><i class="ti-more"></i>All Categories</a></li>
           </ul>
         </li>
 		
