@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class CategoryController extends Controller
 {
@@ -28,12 +29,17 @@ class CategoryController extends Controller
             ]
             );
 
+            $image = $request->file('category_icon');
+            $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+            Image::make($image)->resize(300,300)->save('upload/categories/' . $name_gen);
+            $save_url = 'upload/categories/' . $name_gen;
+
             Category::insert([
                 'category_name_en' => $request->category_name_en,
                 'category_name_fre' => $request->category_name_fre,
                 'category_slug_en' => strtolower(str_replace(' ', '-', $request->category_name_en)),
                 'category_slug_fre' => strtolower(str_replace(' ','-', $request->category_name_fre)),
-                'category_icon' => $request->category_icon,
+                'category_icon' => $save_url,
             ]);
             $notification = array(
                 'message' => 'Category Added Successfully',

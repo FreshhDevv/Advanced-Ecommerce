@@ -32,7 +32,7 @@
                                 <tbody>
                                     @foreach ($categories as $item)
                                     <tr>
-                                        <td><span><i class="{{ $item->category_icon }}"></i></span></td>
+                                    <td><img src="{{ asset($item->category_icon) }}" alt="" style="width: 70px; height: 40px;"></td>
                                         <td>{{ $item->category_name_en }}</td>
                                         <td>{{ $item->category_name_fre }}</td>
                                         <td>
@@ -64,7 +64,7 @@
                     <!-- /.box-header -->
                     <div class="box-body">
                         <div class="table-responsive">
-                            <form method="post" action="{{ route('category.store') }}">
+                            <form method="post" action="{{ route('category.store') }}" enctype="multipart/form-data">
                                 @csrf
 
                                 <div class="form-group">
@@ -90,7 +90,7 @@
                                 <div class="form-group">
                                     <h5>Category Icon <span class="text-danger">*</span></h5>
                                     <div class="controls">
-                                        <input type="text" name="category_icon" class="form-control">
+                                        <input type="file" name="category_icon" class="form-control">
                                         @error('category_icon')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
