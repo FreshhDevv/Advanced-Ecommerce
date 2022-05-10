@@ -89,6 +89,8 @@ Route::prefix('brand')->group(function() {
 
 Route::prefix('category')->group(function(){
     Route::get('/view', [CategoryController::class, 'CategoryView'])->name('all.categories');
+
+    Route::post('/store', [CategoryController::class, 'CategoryStore'])->name('category.store');
 });
 
 
