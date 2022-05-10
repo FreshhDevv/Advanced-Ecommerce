@@ -91,6 +91,8 @@ Route::prefix('category')->group(function(){
     Route::get('/view', [CategoryController::class, 'CategoryView'])->name('all.categories');
 
     Route::post('/store', [CategoryController::class, 'CategoryStore'])->name('category.store');
+
+    Route::get('/edit/{id}', [CategoryController::class, 'CategoryEdit'])->name('category.edit');
 });
 
 

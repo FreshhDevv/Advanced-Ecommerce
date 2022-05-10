@@ -36,7 +36,7 @@
                                         <td>{{ $item->category_name_en }}</td>
                                         <td>{{ $item->category_name_fre }}</td>
                                         <td>
-                                            <a href="" class="btn btn-info"><i class="fa fa-pencil"></i></a>
+                                            <a href="{{ route('category.edit', $item->id) }}" class="btn btn-info"><i class="fa fa-pencil"></i></a>
                                             <a href="" class="btn btn-danger" id="delete"><i class="fa fa-trash"></i></a>
                                         </td>
 
