@@ -27,7 +27,7 @@
                                         <th>Brand French</th>
                                         <th>Image</th>
                                         <th>Action</th>
-                                    </tr>
+                                    </tr>   
                                 </thead>
                                 <tbody>
                                     @foreach ($brands as $item)
